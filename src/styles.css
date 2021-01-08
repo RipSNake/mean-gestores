@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(../node_modules/bootswatch/dist/materia/bootstrap.min.css);
+
+.blank {
+	height: 10em;
+	min-height: 8em;
+}
+
+footer {
+	position: fixed;
+	height: 6em;
+	bottom: 0;
+	text-align: center;
+	background: darkgrey;
+	color: #fff;
+	width: 100%;
+	padding: 2em;
+}

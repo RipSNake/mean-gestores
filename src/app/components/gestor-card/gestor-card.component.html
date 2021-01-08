@@ -1,0 +1,149 @@
+<div class="container row justify-content-center">
+	<div class="col-8 center">
+
+		<div class="card center">
+			<div class="card-header">
+				<h3>Gestor</h3>
+			</div>
+
+			<div class="text-center">
+				<img src="../assets/profile-img.png" class="card-img-top profile-img" alt="Gestor Profile Image" />	
+			</div>
+			
+
+			<div class="card-body">
+				<form #gestorForm="ngForm" id="gestor-form" (ngSubmit)="createGestor(gestorForm)" class="">
+					<fieldset [disabled]="!getEdit()">
+					<input type="hidden" name="_id" [(ngModel)]="gestor._id">
+
+					<div class="form-group">
+						<label for="legajo">Legajo</label>
+						<input type="number" name="legajo" class="form-control" placeholder="1234" [(ngModel)]="gestor.legajo" required="required">
+					</div>
+
+					<div class="form-group">
+						<label for="name">Nombre</label>
+						<input type="text" name="name" class="form-control" placeholder="Enter FullName" [(ngModel)]="gestor.name" required="required">
+					</div>
+
+					<div class="row hours">
+						<div class="col">
+							<div class="text-center">
+								<label for="workingDays" class="">Working Days</label>
+							</div>
+							
+							<div class="form-control form-inline justify-content-around">	
+
+								<div class="form-check form-check-inline">
+									<input type="radio" name="workingDays" class="form-check-input" value="4" disabled="disabled">
+									<label class="form-check-label mr-2 ml-2">4</label>
+									
+								</div>
+
+								<div class="form-check form-check-inline">
+									<input type="radio" name="workingDays" class="form-check-input" value="5">
+									<label class="form-check-label mr-2 ml-2">5</label> 
+									
+								</div>
+
+								<div class="form-check form-check-inline">
+									<input type="radio" name="workingDays" class="form-check-input" value="6" checked="checked">
+									<label class="form-check-label mr-2 ml-2">6</label>
+
+								</div>
+							</div>	
+						</div>
+
+						<div class="col">
+							<div class="text-center">
+								<label for="daysOff">Days Off</label>
+							</div>
+							<div class="form-control form-inline justify-content-around">
+								<div>
+									<input type="checkbox" name="monday" class="form-check-input">
+									<label>M</label>
+								</div>
+								<div>
+									
+									<input type="checkbox" name="tuesday" class="form-check-input">
+									<label class="">T</label>
+								</div>
+								<div>
+									<input type="checkbox" name="wednesday" class="form-check-input">
+									<label>W</label>
+								</div>
+								<div>
+									<input type="checkbox" name="thursday" class="form-check-input">
+									<label>Th</label>
+								</div>
+								<div>
+									<input type="checkbox" name="friday" class="form-check-input">
+									<label>F</label>
+								</div>
+								<div>
+									<input type="checkbox" name="saturday" class="form-check-input">
+									<label>S</label>
+								</div>
+								<div>
+									<input type="checkbox" name="sunday" class="form-check-input">
+									<label>Su</label>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="row">
+						<div class="form-group col">
+							<label for="hourShift">Hour Shift</label>
+							<input type="time" name="hourShift" class="form-control" placeholder="06:00" [(ngModel)]="gestor.hourShift" required="required">
+						</div>
+
+						
+
+						<div class="form-group col">
+							<label for="startHour">Starts</label>
+							<input type="time" name="startHour" class="form-control" placeholder="" [(ngModel)]="gestor.startHour" required="required">
+						</div>
+
+						<div class="form-group col">
+							<label for="endHour">Ends</label>
+							<input type="time" name="endHour" class="form-control" placeholder="" [(ngModel)]="gestor.endHour">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="position">Position</label>
+						<input type="text" name="position" class="form-control" placeholder="Enter position" [(ngModel)]="gestor.position" required="required">
+					</div>
+
+					<div class="form-group">
+						<label for="phone">Phone</label>
+						<input type="tel" name="phone" class="form-control" placeholder="223453454" [(ngModel)]="gestor.phone">
+					</div>
+
+				</fieldset>
+				</form>
+				<div class="row mt-20">
+					<div class="col">
+						
+					</div>
+
+					<div class="col btn-col">
+
+						<button *ngIf="getEdit()" class="btn btn-primary edit" type="submit" form="gestor-form" value="submit">Edit Gestor</button>
+
+						<button *ngIf="getIsNew()" class="btn btn-secondary edit" (click)="resetForm()">Clear</button>		
+						<button class="btn btn-info edit" (click)="getBack()">Back</button>
+					</div>
+
+					
+
+				</div>
+			</div>
+			<div class="card-body">
+				<a href="#">See Notes</a>
+			</div>
+		</div>
+	</div>
+</div>

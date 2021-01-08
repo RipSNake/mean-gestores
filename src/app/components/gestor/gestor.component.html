@@ -1,0 +1,42 @@
+<div class="container">
+	<article class="">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Legajo</th>
+					<th>Name</th>
+					<th>Position</th>
+					<th>Hour Shift</th>
+					<th>Starts</th>
+					<th>Details</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let gestor of gestores">
+					<td>{{ gestor.legajo }}</td>
+					<td>{{ gestor.name }}</td>
+					<td>{{ gestor.position }}</td>
+					<td>{{ gestor.hourShift }}</td>
+					<td>{{ gestor.startHour }}</td>
+					<td>
+						<button class="btn btn-primary btn-sm ml-2" routerLink="/gestor/{{gestor._id}}">
+							<i class="material-icons">remove_red_eye</i>
+						</button>
+					</td>
+					<td>
+						<button class="btn btn-secondary btn-sm ml-2" routerLink="/gestor/{{gestor._id}}" [queryParams]="{edit: true}">
+							<i class="material-icons">edit</i>
+						</button>
+					</td>
+					<td>
+						<button class="btn btn-danger btn-sm ml-2" (click)="deleteGestor(gestor._id!)">
+							<i class="material-icons">delete</i>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</article>
+</div>

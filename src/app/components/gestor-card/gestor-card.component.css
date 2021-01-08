@@ -1,0 +1,28 @@
+.profile-img {
+	min-height: 200px;
+	height: 200px;
+	min-width: 200px;
+	width: 200px;
+	border-radius: 50%;
+}
+
+.container {
+	margin: 2.5em auto;
+}
+
+.hours {
+	margin: 2rem auto;
+}
+
+.btn-col {
+	flex-basis: auto;
+}
+
+.edit {
+	margin-right: 2em;
+}
+
+.mt-20 {
+	margin-top: 2em;
+	text-align: right;
+}
