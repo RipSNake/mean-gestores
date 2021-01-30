@@ -10,9 +10,14 @@
 const { Schema, model } = require('mongoose');
 
 const diaHabilSchema = new Schema ({
-	dia: {type: Date, required: true},
-	jornada: {inicio: {type: Date}, fin: {type: Date}},
-	gestores: {[{type: Number, required: true}]} // Store only the ids 
+	dia: Date,
+	jornada: {inicio: {type: Date}, fin: {type: Date}}, // Start and final hour of the journal
+	gestores: [
+		{
+		type: Schema.Types.ObjectId,
+		ref: 'Gestor'
+		}
+	] // Store only the ids of the gestores
 });
 
 module.exports = model('DiaHabil', diaHabilSchema);
