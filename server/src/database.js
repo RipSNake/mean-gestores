@@ -19,7 +19,7 @@ mongoose.connect('mongodb://localhost/mean-gestores',{
 
 // Connect to mongodb online cluster
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://soymiadmin:<contr0ll3r>@cluster0.8ppim.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const uri = "mongodb+srv://usuario:<password>@cluster0.8ppim.mongodb.net/<dbname>?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
