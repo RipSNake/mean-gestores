@@ -17,6 +17,17 @@ mongoose.connect('mongodb://localhost/mean-gestores',{
 	.then(db => console.log('Db is connected'))
 	.catch((err) => console.log(err)); // catch => to handle initial connection errors
 
+// Connect to mongodb online cluster
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://soymiadmin:<contr0ll3r>@cluster0.8ppim.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+
 
 // Connection error handlers
 // connection.on() to listen to errors events after connection was stablished

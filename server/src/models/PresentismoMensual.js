@@ -8,7 +8,8 @@ const diaHabil = require('./DiaHabil');
 
 
 const presentismoMensualSchema = new Schema ({
-	diasHabiles: [diaHabil]
+	mes: String, // Nombre del mes
+	diasHabiles: [diaHabil] // Dias del mes en forma de arreglo
 });
 
 module.exports = model('PresentismoMensual', presentismoMensualSchema);
