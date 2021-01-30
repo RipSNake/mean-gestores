@@ -5,11 +5,9 @@
 *	Acá va a estar asociadas las peticiones http con los metodos de la base de datos
 *
 */
-
+const Gestor = require('../models/Gestor');
 
 const gestoresCtrl = {};
-
-const Gestor = require('../models/Gestor');
 
 // Mostrar todos los gestores
 gestoresCtrl.getGestores = async (req, res) => {
