@@ -1,8 +1,7 @@
 /**
-*	Este es el archivo principal de nuestro projecto y el que se va a encargar de lanzar nuestra aplicación
-*
-*
-*
+*	
+* Este es el archivo principal de nuestro projecto y el que se
+*	va a encargar de lanzar nuestra aplicación
 *
 */
 
