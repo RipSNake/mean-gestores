@@ -21,7 +21,7 @@ export class NavBarComponent implements OnInit {
   }
 
   // Displays results matching the string tipped in the search-bar
-  searchGestor(term: String): void{
+  searchGestor(term: string): void{
     this.gestorService.searchGestor(term).subscribe(
       gestors => this.gestors = gestors
     );

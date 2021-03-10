@@ -23,8 +23,9 @@ export class GestorService {
   	endHour: '',
   	position: '',
   	phone: 0,
-  	notes: [],
-  	updatedAt: ''
+  	notes: undefined,
+  	updatedAt: undefined,
+    _id: ''
   }
 
   getGestores() {
@@ -54,7 +55,19 @@ export class GestorService {
   }
 
   // Return gestores matching the string used to search
-  searchGestor(string: String) {
-    return this.http.get<Gestor[]>(this.URL_API + '/' + string);
+  // angular filter: $filter('filter')(array, expression, comparator, anyPropertyKey)
+  searchGestor(term: string) {
+    
+    /* // custom search function that returns and array of gestores
+    let match = [];
+    for(let gestor of this.gestores) {
+      if(gestor.name.includes(term)){
+        match.push(gestor);
+      }
+    }
+    return match;
+    */
+    return this.http.get<Gestor[]>(this.URL_API + '/' + term);
+
   }
 }

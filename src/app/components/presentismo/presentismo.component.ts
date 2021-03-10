@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { GestorService } from '../../services/gestor.service';
 import { Gestor } from '../../models/gestor';
+import { Presentismo } from '../../models/presentismo';
 
 @Component({
   selector: 'app-presentismo',
@@ -41,8 +42,13 @@ export class PresentismoComponent implements OnInit {
 
   //
   setPresente(id: string, value: boolean): void {
-    alert('Hola setPresente');
     console.log('Set presente for id: ',id,value);
+    if(!value){
+      if(confirm('Are you sure that you want to remove the presente state?')){
+        console.log('presente removed');
+      }
+    }
   }
+
 
 }

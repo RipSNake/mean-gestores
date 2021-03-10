@@ -3,11 +3,11 @@ export interface Gestor {
 	name: string
 	hourShift: string
 	startHour: string
-	endHour?: string
+	endHour?: string // Should be auto calculated
 	position: string
 	phone: number
-	notes?: []
-	createdAt?: string
-	updatedAt?: string
-	_id?: string
+	notes?: [{date: Date, note: string}]
+	createdAt?: Date
+	updatedAt?: Date
+	_id: string
 }

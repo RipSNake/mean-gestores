@@ -10,15 +10,16 @@
 	
 	<section>
 		<form class="form-inline my-2 my-lg-0">
-			<input #searchBar class="form-control mr-sm-2" type="text" name="search-bar" id="search-bar" placeholder="Search Gestor" (input)="searchGestor(searchBar.value)">
+			<input #searchBar class="form-control mr-sm-2" type="text" name="search-bar" id="search-bar" placeholder="Search Gestor" (input)="searchGestor(searchBar.value)" autocomplete="false">
 
 			<!-- 
 				Now we will create a list that appears only if the user digits a term.
 				Using an *ngFor to list all the matching results
 			-->
 			<ul class="search-result">
-				<li *ngFor="let gestor of gestors">
+				<li *ngFor="let gestor of gestors | filter:searchBar">
 					<a routerLink="/gestor/{{gestor._id}}">{{gestor.name}}</a>
+					}
 				</li>
 			</ul>
 		</form>

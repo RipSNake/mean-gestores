@@ -24,8 +24,9 @@ export class GestorCardComponent implements OnInit {
     endHour: '',
     position: '',
     phone: 0,
-    notes: [],
-    updatedAt: ''
+    notes: undefined,
+    updatedAt: undefined,
+    _id: ''
   };
 
   constructor(
@@ -62,7 +63,7 @@ export class GestorCardComponent implements OnInit {
 
   // We will use this function for Creating and Editing already existing Gestores
   createGestor(form: NgForm) {
-    if(form.value._id){
+    if(form.value._id != ''){
       this.gestorService.editGestor(form.value).subscribe(
         (res) => {
           console.log(res);

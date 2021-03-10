@@ -8,8 +8,8 @@
 			<th>Legajo</th>
 			<th>Name</th>
 			<th>HourShift</th>
-			<th>Start</th>
-			<th>Presence</th>
+			<th>Starts</th>
+			<th>Assistance</th>
 		</tr>	
 	</thead>
 	
@@ -20,7 +20,7 @@
 			<td>{{ gestor.name }}</td>
 			<td>{{ gestor.hourShift }}</td>
 			<td>{{ gestor.startHour }}</td>
-			<td><input type="checkbox" name="presente" class="form-checkbox" ng-model="check" ng-change="alert('hohohho')" ng-true-value="true" ng-false-value="false"></td>
+			<td><input #check type="checkbox" name="presente" class="form-checkbox" (change)="setPresente(gestor._id, check.checked)"></td>
 		</tr>
 	</tbody>
 </table>		
