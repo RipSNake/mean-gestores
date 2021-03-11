@@ -55,9 +55,11 @@ gestoresCtrl.addPhone = async (req, res) => {
 	res.json({status: 'Phone updated'});
 }
 // This function will be use to search for gestores matching the search string
+/*
 gestoresCtrl.searchGestor = async (req, res) => {
-	const gestor = await Gestor.find(req.params.id);
-	res.json(gestor);
+	console.log(req.params);
+	const gestores = await Gestor.find({'name': req.params.term});
+	res.json(gestores);
 }
-
+*/
 module.exports = gestoresCtrl;

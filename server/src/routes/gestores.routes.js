@@ -25,8 +25,8 @@ router.put('/:id', gestoresCtrl.editGestor);
 
 // Delete one Gestor
 router.delete('/:id', gestoresCtrl.deleteGestorById);
-
-// Search for one Gestor
+/*
+// Search for one Gestor's Name ---- As having the same structure of the find by /:id never doesn't come into play
 router.get('/:string', gestoresCtrl.searchGestor);
-
+*/
 module.exports = router;
