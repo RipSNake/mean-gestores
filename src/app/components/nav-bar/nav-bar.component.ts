@@ -11,19 +11,17 @@ import { Gestor } from '../../models/gestor';
 })
 export class NavBarComponent implements OnInit {
 
-  public gestors: Gestor[] = [];
   private searchTerm: string = '';
 
   constructor(private gestorService: GestorService) { }
 
   ngOnInit(): void {
-    
+   
   }
 
   // Displays results matching the string tipped in the search-bar
   searchGestor(term: string): void{
-    this.gestorService.searchGestor(term).subscribe(
-      gestors => this.gestors = gestors
-    );
+    console.log('Search Gestor fn');
+    console.log('This function has to be bind as a filter for the gestor.component gestores array');
   }
 }

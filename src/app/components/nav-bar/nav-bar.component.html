@@ -17,7 +17,7 @@
 				Using an *ngFor to list all the matching results
 			-->
 			<ul class="search-result">
-				<li *ngFor="let gestor of gestors | filter:searchBar">
+				<li *ngFor="let gestor of matchedGestores">
 					<a routerLink="/gestor/{{gestor._id}}">{{gestor.name}}</a>
 					}
 				</li>

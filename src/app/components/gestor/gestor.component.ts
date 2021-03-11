@@ -17,6 +17,7 @@ export class GestorComponent implements OnInit {
 
   ngOnInit(): void {
   	this.getGestores();
+    console.log('gestor component');
   }
 
   // Display full list of Gestores

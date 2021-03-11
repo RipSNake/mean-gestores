@@ -57,17 +57,7 @@ export class GestorService {
   // Return gestores matching the string used to search
   // angular filter: $filter('filter')(array, expression, comparator, anyPropertyKey)
   searchGestor(term: string) {
-    
-    /* // custom search function that returns and array of gestores
-    let match = [];
-    for(let gestor of this.gestores) {
-      if(gestor.name.includes(term)){
-        match.push(gestor);
-      }
-    }
-    return match;
-    */
-    return this.http.get<Gestor[]>(this.URL_API + '/' + term);
-
+    // custom search function that returns and array of gestores
+    console.log('This actually has to be a filter');
   }
 }
